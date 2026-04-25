@@ -1,0 +1,17 @@
+def newton_raphson():
+    x = float(input("enter your number:"))
+    a = int(input ("enter your number of  iterations:"))
+    for i in range(2):
+        f_n = x**2 - x*1 - 2
+        fi_n = x*2 - 1 
+        r_n = x - f_n/fi_n
+        if fi_n == 0:
+            break
+        
+        
+        else:
+            print("the approx value for equation with this provided root is ", r_n)
+            
+        x = r_n
+        
+newton_raphson()
