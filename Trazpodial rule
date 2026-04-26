@@ -1,0 +1,19 @@
+import math 
+def trazpodial(f,a,b,n):
+    h = (b - a) / n
+    total_sum = f(a) + f(b)
+    for i in range(1,n):
+        total_sum += 2*f(a+i*h)
+    return (h/2)*total_sum
+n_k = input("enter your equation")
+def my_func(x):
+    return eval(n_k )
+    
+myfunc_x = lambda x: n_k
+l = int(input("enter your upper limit: "))
+c = int(input(" enter your lower limit"))
+d = int(input(" enyer your number of ote iterations ;"))
+result = trazpodial(myfunc_x , l , c ,d )
+print( "approx result is ", result)
+    
+    
