@@ -13,7 +13,7 @@ myfunc_x = lambda x: n_k
 l = int(input("enter your upper limit: "))
 c = int(input(" enter your lower limit"))
 d = int(input(" enyer your number of ote iterations ;"))
-result = trazpodial(myfunc_x , l , c ,d )
+result = trazpodial(my_func , l , c ,d )
 print( "approx result is ", result)
     
     
