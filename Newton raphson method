@@ -1,17 +1,42 @@
+import math
+
 def newton_raphson():
-    x = float(input("enter your number:"))
-    a = int(input ("enter your number of  iterations:"))
-    for i in range(2):
-        f_n = x**2 - x*1 - 2
-        fi_n = x*2 - 1 
-        r_n = x - f_n/fi_n
+    # Input the function and its derivative as strings for eval()
+    eq = input("Enter your f(x) (use 'x', e.g., x**2 - x - 2): ")
+    eq_deriv = input("Enter your derivative f'(x) (e.g., 2*x - 1): ")
+
+    # Enter initial guesses/limits
+    y_k = float(input("Enter your initial negative limit: "))
+    o_k = float(input("Enter your initial positive limit: "))
+
+    # Check for root existence (Intermediate Value Theorem)
+    # This assumes f(y_k) * f(o_k) < 0
+    ln_k = y_k * o_k 
+    if ln_k < 0:
+        print(f"Root exists between {y_k} and {o_k}")
+
+    # Starting point for iteration
+    x = float(input("Enter the starting value (x0): "))
+    a = int(input("Enter number of iterations: "))
+
+    for i in range(a):
+        # eval() evaluates the string expression using the current value of 'x'
+        f_n = eval(eq)
+        fi_n = eval(eq_deriv)
+
         if fi_n == 0:
+            print("Derivative is zero, method fails.")
             break
+
+        # Newton-Raphson Formula: x_new = x - f(x)/f'(x)
+        x_new = x - f_n / fi_n
         
+        print(f"Iteration {i + 1}: x = {x_new}")
         
-        else:
-            print("the approx value for equation with this provided root is ", r_n)
-            
-        x = r_n
-        
+        # Update x for the next iteration
+        x = x_new
+
+    print(f"Approximate root is: {x}")
+
+# Call the function
 newton_raphson()
