@@ -2,6 +2,7 @@ import math
 
 def newton_raphson():
     # Input the function and its derivative as strings for eval()
+print("apply ** for power and * for multiplication")
     eq = input("Enter your f(x) (use 'x', e.g., x**2 - x - 2): ")
     eq_deriv = input("Enter your derivative f'(x) (e.g., 2*x - 1): ")
 
