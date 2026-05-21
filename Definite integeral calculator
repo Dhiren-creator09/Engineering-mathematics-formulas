@@ -1,0 +1,13 @@
+#Evaluate definite integration
+import sympy as sp 
+import math
+x = sp.symbols('x')
+def defni_integeral():
+    eq_n = input("Enter your equations (use x as variable eg x**3 + x = 0 ):")
+    eq_str = sp.sympify(eq_n)
+    b_low = float(input("Enter your lower limit:"))
+    a_high = float(input("Enter your upper limit:"))
+    l = x
+    work_done = sp.integrate(eq_str,(l,b_low,a_high))
+    print(f"the resultsbt of yours equations is {work_done}")
+defni_integeral()
